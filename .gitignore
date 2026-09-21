@@ -35,3 +35,6 @@ server.log
 .vercel
 /tool-results
 /upload/extracted_site
+
+.vercel
+.env*
