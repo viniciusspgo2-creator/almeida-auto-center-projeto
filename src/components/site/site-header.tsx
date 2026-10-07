@@ -41,6 +41,7 @@ export function SiteHeader({ settings, whatsappUrl }: Props) {
     { href: "/", label: "Início" },
     { href: "/sobre", label: "Sobre nós" },
     { href: "/servicos", label: "Serviços" },
+    { href: "/servicos/remap-reprogramacao-ecu", label: "Performance" },
     { href: "/blog", label: "Blog" },
     { href: "/contato", label: "Contato" },
   ];

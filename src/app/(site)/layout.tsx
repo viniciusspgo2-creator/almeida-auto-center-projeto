@@ -6,7 +6,7 @@ import { RevealEngine } from "@/components/site/motion";
 import { VisitTracker } from "@/components/site/visit-tracker";
 import { Analytics } from "@/components/site/analytics";
 import { JsonLd } from "@/components/site/json-ld";
-import { localBusinessSchema, organizationSchema, websiteSchema } from "@/lib/seo";
+import { localBusinessSchema, websiteSchema } from "@/lib/seo";
 
 export default async function SiteLayout({
   children,
@@ -22,7 +22,6 @@ export default async function SiteLayout({
       <JsonLd
         data={[
           localBusinessSchema(settings, base),
-          organizationSchema(settings, base),
           websiteSchema(settings, base),
         ]}
       />

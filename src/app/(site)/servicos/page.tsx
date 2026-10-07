@@ -46,6 +46,7 @@ export default async function ServicosPage() {
         "Eletrônica embarcada",
       ],
       cta: "Olá! Quero agendar um diagnóstico por scanner.",
+      href: "/servicos/diagnostico-automotivo",
     },
     {
       id: "mecanica",
@@ -62,6 +63,7 @@ export default async function ServicosPage() {
         "Check-up preventivo",
       ],
       cta: "Olá! Quero agendar um serviço de mecânica ou elétrica.",
+      href: "/servicos/mecanica-geral",
     },
     {
       id: "cambio",
@@ -78,6 +80,7 @@ export default async function ServicosPage() {
         "Orientação preventiva",
       ],
       cta: "Olá! Preciso avaliar o câmbio automático do meu veículo.",
+      href: "/servicos#cambio",
     },
     {
       id: "seguranca",
@@ -94,6 +97,7 @@ export default async function ServicosPage() {
         "Reparo seguro e confiável",
       ],
       cta: "Olá! Meu veículo apresenta falha de Airbag ou ABS.",
+      href: "/servicos#seguranca",
     },
     {
       id: "injecao",
@@ -110,6 +114,7 @@ export default async function ServicosPage() {
         "Ajuste de desempenho",
       ],
       cta: "Olá! Quero avaliar a injeção eletrônica do meu carro.",
+      href: "/servicos/injecao-eletronica",
     },
     {
       id: "preventiva",
@@ -126,6 +131,7 @@ export default async function ServicosPage() {
         "Orientação por prioridade",
       ],
       cta: "Olá! Quero agendar uma manutenção preventiva.",
+      href: "/servicos#preventiva",
     },
   ];
 
@@ -160,7 +166,7 @@ export default async function ServicosPage() {
             { name: "Início", path: "/" },
             { name: "Serviços", path: "/servicos" },
           ]),
-          serviceSchema(
+          ...serviceSchema(
             settings,
             base,
             services.map((s) => ({ name: s.title, description: s.text }))
@@ -180,10 +186,10 @@ export default async function ServicosPage() {
         <div className="page-hero__overlay" />
         <div className="container page-hero__content reveal reveal--visible">
           <span className="eyebrow eyebrow--light">Serviços especializados</span>
-          <h1>Seu veículo completo. Uma equipe para cuidar de tudo.</h1>
+          <h1>Serviços automotivos em Bady Bassitt</h1>
           <p>
-            Diagnóstico, manutenção e reparo com tecnologia, experiência e
-            explicações claras.
+            Auto elétrica, mecânica, diagnóstico, injeção eletrônica e a nova
+            frente de performance do Almeida Auto Center.
           </p>
           <div className="page-hero__actions">
             <a
@@ -234,6 +240,48 @@ export default async function ServicosPage() {
         </div>
       </section>
 
+      <section className="section section--dark performance-catalog" id="performance">
+        <div className="container">
+          <header className="section-heading section-heading--light reveal">
+            <div>
+              <span className="eyebrow eyebrow--light">Performance automotiva</span>
+              <h2>Remap, ECU, Stage 1 e Stage 2 com avaliação do projeto.</h2>
+            </div>
+            <p>
+              A compatibilidade depende do veículo, da motorização, do estado
+              do conjunto e do objetivo do cliente. Consulte a aplicação antes
+              de decidir o serviço.
+            </p>
+          </header>
+          <div className="performance-catalog__grid">
+            <Link href="/servicos/remap-reprogramacao-ecu" className="performance-catalog__card reveal">
+              <span>Principal</span>
+              <h3>Remap e reprogramação de ECU</h3>
+              <p>Entenda o processo, as diferenças entre Stage 1 e Stage 2 e como solicitar uma avaliação.</p>
+              <strong>Ver página principal <ArrowRight className="icon" /></strong>
+            </Link>
+            <Link href="/servicos/remap-diesel" className="performance-catalog__card reveal">
+              <span>Aplicação</span>
+              <h3>Remap diesel</h3>
+              <p>Consulte a aplicação para sua motorização e o objetivo técnico do projeto.</p>
+              <strong>Conhecer remap diesel <ArrowRight className="icon" /></strong>
+            </Link>
+            <Link href="/servicos/remap-caminhonetes" className="performance-catalog__card reveal">
+              <span>Veículos</span>
+              <h3>Remap para caminhonetes</h3>
+              <p>Informe modelo, ano e motorização para verificar compatibilidade e condições.</p>
+              <strong>Ver caminhonetes <ArrowRight className="icon" /></strong>
+            </Link>
+            <Link href="/servicos/remap-tsi-importados" className="performance-catalog__card reveal">
+              <span>Projetos</span>
+              <h3>TSI e importados</h3>
+              <p>Famílias de motores, requisitos e aplicações devem ser avaliados individualmente.</p>
+              <strong>Ver TSI e importados <ArrowRight className="icon" /></strong>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section section--dark service-detail-section">
         <div className="container service-detail-grid">
           {services.map((service) => (
@@ -255,6 +303,11 @@ export default async function ServicosPage() {
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
+                {service.href ? (
+                  <Link href={service.href} className="service-detail-card__page-link">
+                    Conhecer esta página <ArrowRight className="icon" />
+                  </Link>
+                ) : null}
                 <a
                   href={wa(service.cta)}
                   target="_blank"

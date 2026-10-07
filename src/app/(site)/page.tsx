@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { getSettings, siteUrl } from "@/lib/settings";
 import { whatsappUrl } from "@/lib/site-config";
-import { buildMetadata, faqSchema, videoSchema, webPageSchema } from "@/lib/seo";
+import { buildMetadata, faqSchema, webPageSchema } from "@/lib/seo";
 import { Counter } from "@/components/site/motion";
 import { FaqAccordion } from "@/components/site/faq-accordion";
 import { WhatsAppIcon } from "@/components/site/whatsapp-icon";
@@ -70,21 +70,21 @@ export default async function HomePage() {
       icon: <Settings className="icon" />,
       title: "Elétrica automotiva",
       text: "Diagnóstico e reparo de sistemas elétricos, bateria, alternador, partida e eletrônica embarcada.",
-      href: "/servicos#mecanica",
+      href: "/servicos/auto-eletrica",
     },
     {
       num: "02",
       icon: <Settings className="icon" />,
       title: "Mecânica geral",
       text: "Manutenção preventiva e corretiva para preservar desempenho, segurança e vida útil do veículo.",
-      href: "/servicos#mecanica",
+      href: "/servicos/mecanica-geral",
     },
     {
       num: "03",
       icon: <ScanLine className="icon" />,
       title: "Injeção eletrônica",
       text: "Scanner avançado, testes de sensores, análise de parâmetros e correção de falhas de desempenho.",
-      href: "/servicos#diagnostico",
+      href: "/servicos/injecao-eletronica",
       featured: true,
     },
     {
@@ -106,7 +106,7 @@ export default async function HomePage() {
       icon: <ScanLine className="icon" />,
       title: "Scanner e diagnóstico",
       text: "Identificação rápida e precisa de falhas que muitas vezes não aparecem em uma avaliação superficial.",
-      href: "/servicos#diagnostico",
+      href: "/servicos/diagnostico-automotivo",
     },
   ];
 
@@ -122,7 +122,6 @@ export default async function HomePage() {
             settings.seoHomeDescription
           ),
           faqSchema(HOME_FAQS),
-          videoSchema(settings, base),
         ]}
       />
       {/* LCP: preload the hero banner */}
@@ -151,16 +150,14 @@ export default async function HomePage() {
               <i /> Tecnologia, experiência e transparência
             </span>
             <h1>
-              Diagnóstico preciso.
+              Auto elétrica, mecânica e diagnóstico
               <br />
-              <span>Reparo rápido.</span>
-              <br />
-              Seu carro seguro.
+              <span>em Bady Bassitt.</span>
             </h1>
             <p>
-              Do sistema elétrico à mecânica geral, incluindo injeção
-              eletrônica, câmbio automático, Airbag e ABS: identificamos a
-              causa real da falha e entregamos uma solução confiável.
+              Diagnóstico preciso. Reparo rápido. Seu carro seguro. Do sistema
+              elétrico à mecânica geral, incluindo injeção eletrônica, câmbio
+              automático, Airbag e ABS.
             </p>
             <div className="hero-actions">
               <a
@@ -373,6 +370,46 @@ export default async function HomePage() {
           <div className="center-action reveal">
             <Link className="btn btn--red" href="/servicos">
               Ver todos os serviços <ArrowRight className="icon" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--light performance-highlight">
+        <div className="container performance-highlight__grid">
+          <div className="section-copy reveal">
+            <span className="eyebrow">Nova frente de performance</span>
+            <h2>Remap e reprogramação de ECU em Bady Bassitt</h2>
+            <p className="lead">
+              Conheça a frente de performance do Almeida Auto Center, com foco
+              em diesel, caminhonetes e TSI/importados. A aplicação de Remap,
+              Stage 1 ou Stage 2 começa pela avaliação do veículo e pela
+              definição do objetivo do projeto.
+            </p>
+            <div className="section-actions">
+              <Link className="btn btn--dark" href="/servicos/remap-reprogramacao-ecu">
+                Conhecer Remap e ECU <ArrowRight className="icon" />
+              </Link>
+              <Link className="text-link" href="/servicos#performance">
+                Ver aplicações <ArrowRight className="icon" />
+              </Link>
+            </div>
+          </div>
+          <div className="performance-highlight__cards reveal">
+            <Link href="/servicos/remap-diesel" className="performance-link-card">
+              <strong>Remap diesel</strong>
+              <span>Aplicações por motorização e objetivo do projeto</span>
+              <ArrowRight className="icon" />
+            </Link>
+            <Link href="/servicos/remap-caminhonetes" className="performance-link-card">
+              <strong>Remap para caminhonetes</strong>
+              <span>Informe modelo, ano e motorização para avaliar</span>
+              <ArrowRight className="icon" />
+            </Link>
+            <Link href="/servicos/remap-tsi-importados" className="performance-link-card">
+              <strong>TSI e importados</strong>
+              <span>Compatibilidade, requisitos e aplicação técnica</span>
+              <ArrowRight className="icon" />
             </Link>
           </div>
         </div>

@@ -23,7 +23,6 @@ export function buildMetadata(input: MetaInput): Metadata {
   return {
     title,
     description,
-    keywords: input.keywords,
     alternates: { canonical: url },
     robots: {
       index: robots.includes("index"),
@@ -87,7 +86,7 @@ export function organizationSchema(settings: SiteSettings, baseUrl: string) {
 export function localBusinessSchema(settings: SiteSettings, baseUrl: string) {
   return {
     "@context": "https://schema.org",
-    "@type": "AutoRepair",
+    "@type": ["AutoRepair", "Organization"],
     "@id": `${baseUrl}/#localbusiness`,
     name: settings.siteName,
     telephone: `+${settings.phone}`,
@@ -110,17 +109,7 @@ export function localBusinessSchema(settings: SiteSettings, baseUrl: string) {
       postalCode: "15115-000",
       addressCountry: "BR",
     },
-    geo: { "@type": "GeoCoordinates", latitude: -20.9244, longitude: -49.4403 },
-    areaServed: [
-      "Bady Bassitt",
-      "São José do Rio Preto",
-      "Mirassol",
-      "Cedral",
-      "Guapiaçu",
-      "Ipiguá",
-      "Onda Verde",
-    ],
-    sameAs: [],
+    areaServed: { "@type": "City", name: "Bady Bassitt" },
   };
 }
 
@@ -213,7 +202,6 @@ export function videoSchema(settings: SiteSettings, baseUrl: string) {
     description:
       "Conheça a estrutura, a equipe e o cuidado aplicado em cada etapa do atendimento no Almeida Auto Center.",
     thumbnailUrl: [`${baseUrl}${settings.seoOgImage}`],
-    uploadDate: "2024-01-15T08:00:00-03:00",
     embedUrl: `https://player.vimeo.com/video/${settings.vimeoId}`,
     contentUrl: `https://vimeo.com/${settings.vimeoId}`,
     publisher: { "@id": `${baseUrl}/#localbusiness` },

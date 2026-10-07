@@ -89,17 +89,19 @@ export const DEFAULT_SETTINGS: SiteSettings = {
   seoTitleSuffix: SITE_SLUG,
   seoRobotsIndex: "index,follow",
 
-  seoHomeTitle: "Almeida Auto Center | Diagnóstico Automotivo em Bady Bassitt",
+  seoHomeTitle:
+    "Auto Elétrica e Mecânica em Bady Bassitt | Almeida Auto Center",
   seoHomeDescription:
-    "Diagnóstico preciso e reparo rápido para seu carro. Mecânica, elétrica, injeção eletrônica, câmbio automático, Airbag e ABS em Bady Bassitt-SP.",
+    "Auto elétrica, mecânica e diagnóstico automotivo em Bady Bassitt. Conheça os serviços do Almeida Auto Center e agende uma avaliação pelo WhatsApp.",
   seoHomeKeywords:
     "oficina bady bassitt, diagnóstico automotivo, injeção eletrônica, câmbio automático, airbag, abs, mecânica, elétrica automotiva",
   seoSobreTitle: "Sobre Nós | Almeida Auto Center",
   seoSobreDescription:
     "Conheça a história do Almeida Auto Center, referência em Bady Bassitt desde 1989 em diagnóstico, mecânica, elétrica e atendimento transparente.",
-  seoServicosTitle: "Serviços Automotivos | Almeida Auto Center",
+  seoServicosTitle:
+    "Serviços Automotivos em Bady Bassitt | Almeida Auto Center",
   seoServicosDescription:
-    "Mecânica, elétrica, injeção eletrônica, câmbio automático, Airbag, ABS, ar-condicionado, scanner e manutenção preventiva em Bady Bassitt.",
+    "Conheça os serviços automotivos do Almeida Auto Center em Bady Bassitt: auto elétrica, mecânica, diagnóstico, injeção, segurança e performance.",
   seoContatoTitle: "Contato e Agendamento | Almeida Auto Center",
   seoContatoDescription:
     "Fale com o Almeida Auto Center em Bady Bassitt. Agende diagnóstico, mecânica, elétrica, câmbio automático, Airbag ou ABS pelo WhatsApp.",

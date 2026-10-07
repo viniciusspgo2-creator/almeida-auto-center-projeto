@@ -4,7 +4,6 @@ import "./globals.css";
 import "@/styles/site.css";
 import { getSettings, siteUrl } from "@/lib/settings";
 import { Analytics } from "@/components/site/analytics";
-import { TempDownloadButton } from "@/components/site/temp-download-button";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 
@@ -24,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(baseUrl),
     title: {
       default: settings.seoHomeTitle,
-      template: `%s | ${settings.siteName}`,
+      template: "%s",
     },
     description: settings.seoHomeDescription,
     applicationName: settings.siteName,
@@ -57,7 +56,6 @@ export default function RootLayout({
       <body className="antialiased">
         <Analytics />
         {children}
-        <TempDownloadButton />
         <Toaster />
         <SonnerToaster position="bottom-left" richColors theme="dark" />
       </body>

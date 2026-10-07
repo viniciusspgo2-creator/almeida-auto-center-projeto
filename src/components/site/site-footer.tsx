@@ -75,8 +75,11 @@ export function SiteFooter({ settings, whatsappUrl, mapsUrl }: Props) {
           </div>
           <div>
             <h3>Serviços</h3>
-            <Link href="/servicos#diagnostico">Scanner e diagnóstico</Link>
-            <Link href="/servicos#mecanica">Mecânica e elétrica</Link>
+            <Link href="/servicos/auto-eletrica">Auto elétrica</Link>
+            <Link href="/servicos/mecanica-geral">Mecânica geral</Link>
+            <Link href="/servicos/diagnostico-automotivo">Diagnóstico automotivo</Link>
+            <Link href="/servicos/injecao-eletronica">Injeção eletrônica</Link>
+            <Link href="/servicos/remap-reprogramacao-ecu">Conhecer Remap e ECU</Link>
             <Link href="/servicos#cambio">Câmbio automático</Link>
             <Link href="/servicos#seguranca">Airbag e ABS</Link>
           </div>
