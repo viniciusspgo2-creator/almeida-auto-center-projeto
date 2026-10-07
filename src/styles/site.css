@@ -116,6 +116,18 @@ img{user-select:none}
 @media (max-width:820px){.performance-highlight__grid,.service-page-intro__grid,.service-page-process__grid,.service-page-faq__grid{grid-template-columns:1fr;gap:48px}.performance-catalog__grid{grid-template-columns:repeat(2,1fr)}.service-page-intro__media{height:500px}.service-page-related__grid{grid-template-columns:1fr}.service-page-process__grid{gap:42px}}
 @media (max-width:560px){.performance-catalog__grid{grid-template-columns:1fr}.performance-link-card{padding:18px}.service-page-intro__media{height:420px}.service-page-note{padding:24px 20px}.service-page-related{padding-top:68px}}
 
+/* Header menu for every service page */
+.nav-dropdown{position:relative}
+.nav-dropdown__menu{position:absolute;top:calc(100% + 10px);left:50%;z-index:1100;display:grid;min-width:270px;padding:9px;background:rgba(8,8,9,.98);border:1px solid rgba(255,255,255,.14);border-radius:15px;box-shadow:0 24px 50px rgba(0,0,0,.4);opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-8px);transition:.25s var(--ease)}
+.nav-dropdown:hover .nav-dropdown__menu,.nav-dropdown:focus-within .nav-dropdown__menu{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
+.desktop-nav .nav-dropdown__menu a{display:block;padding:10px 12px;border-radius:9px;color:#cfd3da;font-size:12px;line-height:1.25;white-space:nowrap}
+.desktop-nav .nav-dropdown__menu a:hover,.desktop-nav .nav-dropdown__menu a.is-active{background:rgba(237,28,36,.16);color:#fff}
+.desktop-nav .nav-dropdown__menu a::after{display:none}
+.mobile-nav-group{display:grid}
+.mobile-service-links{display:grid;padding:0 0 6px 18px;border-left:2px solid rgba(237,28,36,.45)}
+.mobile-service-links a{padding:10px 4px!important;border-bottom:1px solid rgba(255,255,255,.06)!important;color:#b8bdc6;font-size:15px!important}
+.mobile-service-links a.is-active{color:#ff5960}
+
 @media (max-width:900px){
   .blog-grid{grid-template-columns:1fr}
   .blog-card--featured{flex-direction:column}

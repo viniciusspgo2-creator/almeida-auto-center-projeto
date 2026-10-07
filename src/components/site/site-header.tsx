@@ -46,6 +46,18 @@ export function SiteHeader({ settings, whatsappUrl }: Props) {
     { href: "/contato", label: "Contato" },
   ];
 
+  const serviceLinks = [
+    { href: "/servicos", label: "Todos os serviços" },
+    { href: "/servicos/remap-reprogramacao-ecu", label: "Remap e ECU" },
+    { href: "/servicos/remap-diesel", label: "Remap diesel" },
+    { href: "/servicos/remap-caminhonetes", label: "Remap para caminhonetes" },
+    { href: "/servicos/remap-tsi-importados", label: "TSI e importados" },
+    { href: "/servicos/auto-eletrica", label: "Auto elétrica" },
+    { href: "/servicos/mecanica-geral", label: "Mecânica geral" },
+    { href: "/servicos/diagnostico-automotivo", label: "Diagnóstico automotivo" },
+    { href: "/servicos/injecao-eletronica", label: "Injeção eletrônica" },
+  ];
+
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -86,13 +98,35 @@ export function SiteHeader({ settings, whatsappUrl }: Props) {
 
           <nav className="desktop-nav" aria-label="Navegação principal">
             {links.map((link) => (
-              <Link
-                key={link.href}
-                className={isActive(link.href) ? "is-active" : ""}
-                href={link.href}
-              >
-                {link.label}
-              </Link>
+              link.href === "/servicos" ? (
+                <div className="nav-dropdown" key={link.href}>
+                  <Link
+                    className={isActive(link.href) ? "is-active" : ""}
+                    href={link.href}
+                  >
+                    {link.label}
+                  </Link>
+                  <div className="nav-dropdown__menu">
+                    {serviceLinks.map((serviceLink) => (
+                      <Link
+                        key={serviceLink.href}
+                        className={isActive(serviceLink.href) ? "is-active" : ""}
+                        href={serviceLink.href}
+                      >
+                        {serviceLink.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.href}
+                  className={isActive(link.href) ? "is-active" : ""}
+                  href={link.href}
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
           </nav>
 
@@ -133,14 +167,29 @@ export function SiteHeader({ settings, whatsappUrl }: Props) {
         <div className={`mobile-panel${open ? " is-open" : ""}`}>
           <nav aria-label="Navegação móvel">
             {links.map((link) => (
-              <Link
-                key={link.href}
-                className={isActive(link.href) ? "is-active" : ""}
-                href={link.href}
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Link>
+              <span key={link.href} className="mobile-nav-group">
+                <Link
+                  className={isActive(link.href) ? "is-active" : ""}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </Link>
+                {link.href === "/servicos" ? (
+                  <span className="mobile-service-links">
+                    {serviceLinks.slice(1).map((serviceLink) => (
+                      <Link
+                        key={serviceLink.href}
+                        className={isActive(serviceLink.href) ? "is-active" : ""}
+                        href={serviceLink.href}
+                        onClick={() => setOpen(false)}
+                      >
+                        {serviceLink.label}
+                      </Link>
+                    ))}
+                  </span>
+                ) : null}
+              </span>
             ))}
           </nav>
           <div className="mobile-panel__contact">
